@@ -1,0 +1,16 @@
+# HalfPace TaxGPT
+
+> India's AI Tax Expert — a free chat assistant for Indian taxation and compliance. Answers questions on Income Tax, GST, TDS, Accounting, ROC & MCA, Trademark, LLP & Company Registration, MSME, Startup India, Professional Tax, Bookkeeping and Payroll, in English, Hindi, Urdu and Hinglish.
+
+## Pages
+
+- [Home](/): Start a conversation with HalfPace TaxGPT and explore example questions.
+- [About](/about): What HalfPace TaxGPT is, what it covers, and how it works.
+- [Tax Calculators](/calculators): Planned suite of Indian tax calculators.
+- [Latest Tax Updates](/updates): Curated tax and compliance updates (coming soon).
+- [Contact](/contact): How to reach the HalfPace team.
+
+## Optional
+
+- [Privacy Policy](/privacy): How HalfPace TaxGPT handles user data.
+- [Terms of Use](/terms): Terms governing use of the service.
