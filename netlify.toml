@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "20"
+
+# Nitro's netlify preset emits the SSR handler to .netlify/functions-internal
+# and writes its own _redirects. No manual [[redirects]] needed.

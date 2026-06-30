@@ -6,10 +6,19 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Netlify preset is auto-selected when building on Netlify (via NITRO_PRESET=netlify
+// which Netlify sets, or via the netlify.toml build env). We also set it explicitly
+// here so `npm run build` outside Lovable always produces a Netlify-ready bundle.
+const isLovableBuild = !!process.env.LOVABLE_BUILD;
+const nitroPreset = process.env.NITRO_PRESET || "netlify";
+
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: isLovableBuild
+    ? undefined
+    : {
+        preset: nitroPreset,
+      },
 });
