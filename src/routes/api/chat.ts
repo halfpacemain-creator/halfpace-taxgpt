@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
 import { AI_CONFIG } from "@/lib/ai-config";
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { createGoogleProvider } from "@/lib/ai-gateway.server";
 import { buildSystemPrompt } from "@/lib/system-prompt";
 
 type ChatRequestBody = { messages?: unknown };
@@ -23,13 +23,13 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("messages array is required", { status: 400 });
         }
 
-        const key = process.env.LOVABLE_API_KEY;
+        const key = process.env.GEMINI_API_KEY;
         if (!key) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+          return new Response("Missing GEMINI_API_KEY", { status: 500 });
         }
 
         try {
-          const gateway = createLovableAiGatewayProvider(key);
+          const gateway = createGoogleProvider(key);
           // Use the latest user message to (in future) retrieve relevant
           // legal chunks. Today buildSystemPrompt returns the full
           // structured knowledge base regardless of query.

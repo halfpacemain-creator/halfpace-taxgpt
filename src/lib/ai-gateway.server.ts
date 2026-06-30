@@ -1,19 +1,10 @@
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 
 /**
- * Lovable AI Gateway provider helper.
+ * Official Google Gemini provider.
  *
- * Modular AI layer — to switch provider later (OpenAI direct, OpenRouter,
- * Anthropic, Gemini, etc.) only this file and src/lib/ai-config.ts need
- * to change. The chat route and any other server consumers import the
- * `getModel` helper below.
+ * Reads GEMINI_API_KEY from server env. Swap providers by editing this file.
  */
-export function createLovableAiGatewayProvider(apiKey: string) {
-  return createOpenAICompatible({
-    name: "lovable-ai-gateway",
-    baseURL: "https://ai.gateway.lovable.dev/v1",
-    headers: {
-      "Lovable-API-Key": apiKey,
-    },
-  });
+export function createGoogleProvider(apiKey: string) {
+  return createGoogleGenerativeAI({ apiKey });
 }
