@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 
 import { AppShell } from "@/components/app-shell";
+import { ChatSkeleton } from "@/components/chat-skeleton";
 import { ChatWindow } from "@/components/chat-window";
 import { getThread } from "@/lib/threads";
 import type { UIMessage } from "ai";
@@ -45,9 +46,7 @@ function ChatPage() {
   return (
     <AppShell>
       {initial === null ? (
-        <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-          Loading…
-        </div>
+        <ChatSkeleton />
       ) : (
         <ChatWindow
           key={threadId}

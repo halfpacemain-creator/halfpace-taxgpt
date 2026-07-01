@@ -3,9 +3,21 @@ import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
 import { AI_CONFIG } from "@/lib/ai-config";
 import { createGoogleProvider } from "@/lib/ai-gateway.server";
+import { classifyProviderError, sentinelFor } from "@/lib/error-messages";
 import { buildSystemPrompt } from "@/lib/system-prompt";
 
 type ChatRequestBody = { messages?: unknown };
+
+function logServerError(context: string, err: unknown) {
+  const e = err as { status?: number; message?: string; stack?: string; code?: string };
+  // Full technical detail stays on the server for debugging. Never returned to the client.
+  console.error(`[chat-api] ${context}`, {
+    status: e?.status,
+    code: e?.code,
+    message: e?.message,
+    stack: e?.stack,
+  });
+}
 
 export const Route = createFileRoute("/api/chat")({
   server: {
@@ -14,25 +26,24 @@ export const Route = createFileRoute("/api/chat")({
         let body: ChatRequestBody;
         try {
           body = (await request.json()) as ChatRequestBody;
-        } catch {
-          return new Response("Invalid JSON body", { status: 400 });
+        } catch (err) {
+          logServerError("invalid-json", err);
+          return new Response(sentinelFor("generic"), { status: 400 });
         }
 
         const messages = body.messages;
         if (!Array.isArray(messages)) {
-          return new Response("messages array is required", { status: 400 });
+          return new Response(sentinelFor("generic"), { status: 400 });
         }
 
         const key = process.env.GEMINI_API_KEY;
         if (!key) {
-          return new Response("Missing GEMINI_API_KEY", { status: 500 });
+          logServerError("missing-api-key", new Error("GEMINI_API_KEY not set"));
+          return new Response(sentinelFor("generic"), { status: 500 });
         }
 
         try {
           const gateway = createGoogleProvider(key);
-          // Use the latest user message to (in future) retrieve relevant
-          // legal chunks. Today buildSystemPrompt returns the full
-          // structured knowledge base regardless of query.
           const lastUser = [...(messages as UIMessage[])]
             .reverse()
             .find((m) => m.role === "user");
@@ -51,20 +62,15 @@ export const Route = createFileRoute("/api/chat")({
           return result.toUIMessageStreamResponse({
             originalMessages: messages as UIMessage[],
             onError: (err) => {
-              const e = err as { status?: number; message?: string };
-              if (e?.status === 429) {
-                return "You're sending requests too quickly. Please try again in a moment.";
-              }
-              if (e?.status === 402) {
-                return "AI credits exhausted on this workspace. Please add credits in Settings → Plans & credits.";
-              }
-              return e?.message ?? "Something went wrong while generating a response.";
+              logServerError("stream-error", err);
+              return sentinelFor(classifyProviderError(err));
             },
           });
         } catch (err) {
-          const e = err as { status?: number; message?: string };
-          const status = e?.status ?? 500;
-          return new Response(e?.message ?? "Internal error", { status });
+          logServerError("handler-error", err);
+          return new Response(sentinelFor(classifyProviderError(err)), {
+            status: 500,
+          });
         }
       },
     },
