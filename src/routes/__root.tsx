@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-      { title: "HalfPace TaxGPT — India's AI Tax Expert" },
+      { title: "HalfPace® TaxGPT — India's AI Tax Expert" },
       {
         name: "description",
         content:
@@ -88,24 +88,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "HalfPace" },
       { name: "theme-color", content: "#0B5ED7" },
-      { property: "og:title", content: "HalfPace TaxGPT — India's AI Tax Expert" },
+      { property: "og:title", content: "HalfPace® TaxGPT — India's AI Tax Expert" },
       {
         property: "og:description",
         content:
           "Ask anything about Income Tax, GST, TDS, Accounting, Trademark or Business Compliance.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "HalfPace TaxGPT" },
+      { property: "og:site_name", content: "HalfPace® TaxGPT" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "HalfPace TaxGPT — India's AI Tax Expert" },
+      { name: "twitter:title", content: "HalfPace® TaxGPT — India's AI Tax Expert" },
       {
         name: "twitter:description",
         content:
           "AI assistant for Indian taxation: Income Tax, GST, TDS, MCA, Trademark and more.",
       },
-      { name: "description", content: "HalfPace TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
-      { property: "og:description", content: "HalfPace TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
-      { name: "twitter:description", content: "HalfPace TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
+      { name: "description", content: "HalfPace® TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
+      { property: "og:description", content: "HalfPace® TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
+      { name: "twitter:description", content: "HalfPace® TaxGPT is an AI-powered web app for understanding Indian taxation and compliance." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1f2c8c2-3e20-46db-ae94-3ad1b3536ac8/id-preview-370706e0--0c8cbee4-7b61-46d6-8733-a2e984264ab5.lovable.app-1782730780015.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1f2c8c2-3e20-46db-ae94-3ad1b3536ac8/id-preview-370706e0--0c8cbee4-7b61-46d6-8733-a2e984264ab5.lovable.app-1782730780015.png" },
     ],

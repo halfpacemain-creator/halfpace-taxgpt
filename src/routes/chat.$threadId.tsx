@@ -16,7 +16,7 @@ export const Route = createFileRoute("/chat/$threadId")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Chat — HalfPace TaxGPT" },
+      { title: "Chat — HalfPace® TaxGPT" },
       {
         name: "description",
         content:

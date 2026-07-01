@@ -20,13 +20,13 @@ import { newThreadId } from "@/lib/threads";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HalfPace TaxGPT — India's AI Tax Expert" },
+      { title: "HalfPace® TaxGPT — India's AI Tax Expert" },
       {
         name: "description",
         content:
-          "Ask anything about Income Tax, GST, Accounting, Trademark or Business Compliance. Free AI assistant for Indian taxation in English, Hindi, Urdu and Hinglish.",
+          "Ask HalfPace® TaxGPT anything about Income Tax, GST, Accounting, Trademark or Business Compliance. Free AI assistant for Indian taxation in English, Hindi, Urdu and Hinglish.",
       },
-      { property: "og:title", content: "HalfPace TaxGPT — India's AI Tax Expert" },
+      { property: "og:title", content: "HalfPace® TaxGPT — India's AI Tax Expert" },
       {
         property: "og:description",
         content:
@@ -96,7 +96,8 @@ function Index() {
         <section className="mx-auto flex max-w-3xl flex-col items-center px-4 pb-10 pt-12 text-center md:pt-20">
           <Logo size="lg" showText={false} />
           <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
-            HalfPace <span className="brand-gradient-text">TaxGPT</span>
+            HalfPace<sup className="reg-mark" aria-hidden>®</sup>{" "}
+            <span className="brand-gradient-text">TaxGPT</span>
           </h1>
           <p className="mt-3 text-base text-muted-foreground md:text-lg">
             Ask anything about Income Tax, GST, Accounting, Trademark or Business Compliance.
@@ -115,7 +116,7 @@ function Index() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 dir={rtl ? "rtl" : "ltr"}
-                placeholder="Ask HalfPace TaxGPT anything…"
+                placeholder="Ask HalfPace® TaxGPT anything…"
                 rows={1}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {

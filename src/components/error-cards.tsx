@@ -13,7 +13,7 @@ export function QuotaLimitCard({ onDismiss }: { onDismiss?: () => void }) {
         Daily AI Usage Limit Reached
       </h3>
       <div className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
-        <p>Thank you for using HalfPace TaxGPT.</p>
+        <p>Thank you for using HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT.</p>
         <p>We've reached today's free AI usage limit for this service.</p>
         <p>
           Please try again later, or continue your query with our expert team on
@@ -24,7 +24,7 @@ export function QuotaLimitCard({ onDismiss }: { onDismiss?: () => void }) {
           <span className="font-medium text-foreground">+91 99876 00927</span>
         </p>
         <p className="text-xs">
-          HalfPace TaxGPT is currently in{" "}
+          HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT is currently in{" "}
           <span className="font-medium text-foreground">Beta</span>. We appreciate
           your patience and support.
         </p>

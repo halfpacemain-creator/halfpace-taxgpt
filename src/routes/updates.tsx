@@ -7,7 +7,7 @@ import { PublicFooter } from "@/components/public-footer";
 export const Route = createFileRoute("/updates")({
   head: () => ({
     meta: [
-      { title: "Latest Tax Updates — HalfPace TaxGPT" },
+      { title: "Latest Tax Updates — HalfPace® TaxGPT" },
       {
         name: "description",
         content:
@@ -50,7 +50,7 @@ function Updates() {
               to="/"
               className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-              Ask HalfPace TaxGPT
+              Ask HalfPace® TaxGPT
             </Link>
           </div>
         </section>

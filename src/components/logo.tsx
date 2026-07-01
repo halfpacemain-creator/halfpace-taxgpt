@@ -26,7 +26,8 @@ export function Logo({ className, showText = true, size = "md" }: LogoProps) {
       {showText && (
         <div className="leading-tight">
           <div className="font-display text-[15px] font-semibold tracking-tight text-foreground">
-            HalfPace <span className="brand-gradient-text">TaxGPT</span>
+            HalfPace<sup className="reg-mark" aria-hidden>®</sup>{" "}
+            <span className="brand-gradient-text">TaxGPT</span>
           </div>
           <div className="text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
             India's AI Tax Expert

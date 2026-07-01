@@ -300,7 +300,7 @@ export function ChatWindow({
           />
           <div className="mt-1.5 flex flex-wrap items-center justify-between gap-2 pb-2 text-[11px] text-muted-foreground">
             <span className="min-w-0">
-              HalfPace TaxGPT can make mistakes. Verify important details with a qualified professional.
+              HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT can make mistakes. Verify important details with a qualified professional.
             </span>
             {messages.length > 0 && (
               <div className="flex items-center gap-1">
@@ -383,7 +383,7 @@ function ThinkingIndicator() {
         <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-primary" />
       </span>
       <span className="hp-analyzing font-medium">
-        HalfPace TaxGPT is analysing your query…
+        HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT is analysing your query…
       </span>
     </div>
   );

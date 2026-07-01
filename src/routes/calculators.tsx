@@ -7,7 +7,7 @@ import { PublicFooter } from "@/components/public-footer";
 export const Route = createFileRoute("/calculators")({
   head: () => ({
     meta: [
-      { title: "Tax Calculators — HalfPace TaxGPT" },
+      { title: "Tax Calculators — HalfPace® TaxGPT" },
       {
         name: "description",
         content:
@@ -46,7 +46,7 @@ function Calculators() {
 
           <p className="mt-6 text-muted-foreground">
             We're building a suite of accurate Indian tax calculators. In the
-            meantime, you can ask HalfPace TaxGPT to walk you through any of
+            meantime, you can ask HalfPace® TaxGPT to walk you through any of
             these calculations conversationally.
           </p>
 

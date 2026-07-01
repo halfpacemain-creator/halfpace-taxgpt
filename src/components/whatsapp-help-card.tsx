@@ -43,7 +43,8 @@ export function WhatsAppHelpCard({
         Still not sure about the answer?
       </h4>
       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-        HalfPace TaxGPT is currently in <span className="font-medium text-foreground">Beta</span>.
+        HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT is currently in{" "}
+        <span className="font-medium text-foreground">Beta</span>.
         While we strive for accuracy, some tax situations need a detailed review by our experts.
         If your query is complex or you'd like professional assistance, continue this conversation
         directly with our team on WhatsApp. Our tax experts will review your query and respond

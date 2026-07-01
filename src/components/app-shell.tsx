@@ -30,7 +30,7 @@ const staticLinks = [
   { to: "/bookmarks", label: "Bookmarks", icon: Star },
   { to: "/calculators", label: "Tax Calculators", icon: Calculator },
   { to: "/updates", label: "Latest Tax Updates", icon: Newspaper },
-  { to: "/about", label: "About HalfPace", icon: Info },
+  { to: "/about", label: "About HalfPace®", icon: Info },
   { to: "/contact", label: "Contact", icon: Mail },
 ] as const;
 
@@ -164,7 +164,7 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
       </div>
 
       <div className="border-t border-sidebar-border px-4 py-3 text-[11px] text-muted-foreground">
-        © {new Date().getFullYear()} HalfPace TaxGPT
+        © {new Date().getFullYear()} HalfPace<sup className="reg-mark" aria-hidden>®</sup> TaxGPT
       </div>
     </aside>
   );
