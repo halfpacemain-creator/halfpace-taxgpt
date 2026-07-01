@@ -15,7 +15,6 @@ import { Logo } from "@/components/logo";
 import { PublicFooter } from "@/components/public-footer";
 import { Button } from "@/components/ui/button";
 import { newThreadId } from "@/lib/threads";
-import { StatsSection } from "@/components/stats-section";
 
 
 export const Route = createFileRoute("/")({
@@ -157,7 +156,7 @@ function Index() {
           </div>
         </section>
 
-        <StatsSection />
+        
 
         <section className="mx-auto max-w-5xl px-4 pb-16">
           <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-6">
